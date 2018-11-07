@@ -33,14 +33,7 @@ conky.config = {
 
 conky.text = [[
   [
-    {
-      "full_text": " Rice me daddy ",
-      "color": "\#fdf6e3",
-      "background": "\#dc322f",
-      "separator": true,
-      "separator_block_width": 0
-    },
-    {
+   {
       "full_text": "  ${cpu cpu0}%, ${execi 5 sensors|grep 'Core 0'|awk '{print $3}'} ",
       "color": "\#fdf6e3",
       "background": "\#dc322f",
@@ -54,13 +47,7 @@ conky.text = [[
       "separator": true,
       "separator_block_width": 0
     },
-    {
-      "full_text": "  ",
-      "color": "\#2aa198",
-      "background": "\#2F2F2F",
-      "separator": true,
-      "separator_block_width": 0
-    },
+    
     {
       "full_text": "  ${time %a, %d/%m/%y} ",
       "color": "\#fdf6e3",

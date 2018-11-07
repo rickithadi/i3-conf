@@ -1,4 +1,6 @@
 #### Configuration file for i3 window manager (4.x) 
+#
+#
 ### http://i3wm.org/
 ## Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
@@ -28,6 +30,9 @@
 set $mod Mod1
 
 
+bindsym $mod+F3 exec xfce4-appfinder
+bindsym $mod+F4 exec xfce4-appfinder --collapsed
+bindsym $mod+x exec xfce4-session-logout
 ################### FONTS ######################
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -227,7 +232,7 @@ for_window [title="^Steam Keyboard$"] floating enable
 # personal preference for tuning the look
 #bindsym $mod+Return exec i3-sensible-terminal
 #bindsym $mod+Return exec terminator;focus
-bindsym $mod+Return exec urxvt;focus
+bindsym $mod+Return exec st;focus
 
 
 ################### MENU ######################
@@ -252,8 +257,8 @@ bindsym $mod+shift+d exec j4-dmenu-desktop --dmenu="dmenu -fn 'DroidSansMono:bol
 # xrandr --output DVI-I-2 --right-of DVI-I-1 --auto
 
 # my current setup
-set $firstMonitor DVI-I-1
-set $secondMonitor DVI-I-2
+set $firstMonitor DVI-I-0
+set $secondMonitor HDMI-0
 
 #set $firstMonitor DVI-I-2
 #set $secondMonitor VGA-0
@@ -285,19 +290,19 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+10 workspace 10
+bindsym $mod+0 workspace 0
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4
+bindsym $mod+Shift+1 nd move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+section move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
-bindsym $mod+Shift+exclam move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 
 ################### MOUSE ######################
@@ -350,10 +355,10 @@ bindsym control+mod1+f exec google-chrome;workspace 2; focus
 bindsym $mod+F1 exec google-chrome;workspace 2;focus
 bindsym control+mod1+w exec emacs;workspace 1;focus
 bindsym $mod+F2 exec emacs;workspace 1;focus
-bindsym control+mod1+i exec inkscape;workspace 3;focus
-bindsym $mod+F3 exec inkscape;workspace 3;focus
-bindsym control+mod1+g exec gimp;workspace 4;focus
-bindsym $mod+F4 exec gimp;workspace 4;focus
+#bindsym control+mod1+i exec inkscape;workspace 3;focus
+#bindsym $mod+F3 exec inkscape;workspace 3;focus
+#bindsym control+mod1+g exec gimp;workspace 4;focus
+#bindsym $mod+F4 exec gimp;workspace 4;focus
 bindsym control+mod1+b exec nemo --no-desktop;workspace 8;focus
 bindsym $mod+F8 exec nemo --no-desktop;workspace 8;focus
 bindsym control+mod1+e exec evolution;workspace 9;focus
@@ -398,7 +403,7 @@ for_window [class="^Skype$"] floating enable
 for_window [class="^Gnome-font-viewer$"] floating enable
 #for_window [class="^Thunar$"] floating enable
 for_window [class="^Gpick$"] floating enable
-#for_window [class="^Vlc$"] floating enable
+for_window [class="^Vlc$"] floating enable
 #for_window [class="^Spotify$"] floating enable workspace 10
 #for_window [instance="gimp"] floating enable
 for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
@@ -645,11 +650,11 @@ client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 # Settings for I3 next gap git
 # https://github.com/Airblader/i3
 
-for_window [class="^.*"] border pixel 5
-#gaps inner 5
-#gaps outer 5
-#smart_gaps on
-#smart_borders on
+for_window [class="^.*"] border pixel 3
+gaps inner 5
+gaps outer 5
+smart_gaps on
+smart_borders on
 
 
 ###########################################################################
@@ -674,8 +679,8 @@ mode "$mode_gaps_inner" {
         bindsym minus gaps inner current minus 5
         bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
+	bindsym Shift+plus  gaps inner all plus 5
+	bindsym Shift+minus gaps inner all minus 5
         bindsym Shift+0     gaps inner all set 0
 
         bindsym Return mode "default"
